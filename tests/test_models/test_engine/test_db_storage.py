@@ -6,6 +6,7 @@ Contains the TestDBStorageDocs and TestDBStorage classes
 from datetime import datetime
 import inspect
 import models
+from models.base_model import Base
 from models.engine import db_storage
 from models.amenity import Amenity
 from models.base_model import BaseModel
@@ -68,8 +69,8 @@ test_db_storage.py'])
                             "{:s} method needs a docstring".format(func[0]))
 
 
-class TestFileStorage(unittest.TestCase):
-     """Test the DBStorage class"""
+class TestDBStorage(unittest.TestCase):
+    """Test the DBStorage class"""
 
     @unittest.skipIf(os.getenv('HBNB_TYPE_STORAGE') != 'db',
                      "not testing db storage")
